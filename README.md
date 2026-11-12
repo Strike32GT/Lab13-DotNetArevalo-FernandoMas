@@ -2,6 +2,8 @@
 
 Proyecto de la Semana 13 del curso Desarrollo de Aplicaciones Empresariales Avanzadas. Implementa una Web API REST con ASP.NET Core 10 y Entity Framework Core 10, organizada en cuatro capas y usando DTOs con AutoMapper.
 
+Fernando Mas
+
 ## 1. Tema y problema que resuelve
 
 El tema elegido es la gestión del menú de un restaurante. Muchos restaurantes pequeños administran sus cartas en cuadernos, hojas de cálculo o mensajes de WhatsApp, lo que provoca nombres repetidos, precios desactualizados y platos que se siguen ofreciendo aunque ya no estén disponibles.
