@@ -1,0 +1,7 @@
+HTTP/1.1 409 Conflict
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:15 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"mensaje":"No se puede registrar un plato en la categoría 'Temporada' porque está inactiva."}

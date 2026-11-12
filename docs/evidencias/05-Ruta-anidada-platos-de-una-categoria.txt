@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:15 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+[{"platoId":2,"nombre":"Causa limeña","descripcion":"Papa amarilla con pollo y mayonesa","precio":22.50,"disponible":true,"categoriaId":1,"categoriaNombre":"Entradas"},{"platoId":1,"nombre":"Ceviche clásico","descripcion":"Pescado fresco marinado en limón y ají","precio":28.90,"disponible":true,"categoriaId":1,"categoriaNombre":"Entradas"}]

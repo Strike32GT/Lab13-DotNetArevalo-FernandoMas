@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:16 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+[{"platoId":4,"nombre":"Ají de gallina","descripcion":"Pollo deshilachado en crema de ají amarillo","precio":34.00,"disponible":true,"categoriaId":2,"categoriaNombre":"Platos de fondo"},{"platoId":5,"nombre":"Arroz con mariscos","descripcion":"Arroz meloso con mariscos y culantro","precio":46.50,"disponible":true,"categoriaId":2,"categoriaNombre":"Platos de fondo"},{"platoId":3,"nombre":"Lomo saltado","descripcion":"Res salteada con cebolla, tomate y papas fritas","precio":39.90,"disponible":true,"categoriaId":2,"categoriaNombre":"Platos de fondo"}]

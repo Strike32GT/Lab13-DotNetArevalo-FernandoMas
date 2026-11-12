@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:17 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"platoId":10,"nombre":"Tiradito actualizado","descripcion":"Actualizado en la prueba","precio":27.00,"disponible":false,"categoriaId":1,"categoriaNombre":"Entradas"}

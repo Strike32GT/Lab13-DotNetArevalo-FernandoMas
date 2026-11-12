@@ -1,0 +1,7 @@
+HTTP/1.1 409 Conflict
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:17 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"mensaje":"Ya existe un plato llamado 'Tiradito de prueba' en la categoría 'Entradas'."}

@@ -1,0 +1,224 @@
+@host = https://localhost:7266
+@contentType = application/json
+
+# ============================================================
+# API Restaurante - pruebas manuales
+# Ejecutar las solicitudes en orden. Si se repite la secuencia,
+# restaurar la base con database/01_restaurante.sql.
+# ============================================================
+
+### 01. GET categorias - 200
+GET {{host}}/api/categorias
+
+### 02. GET categorias con filtros - 200
+GET {{host}}/api/categorias?nombre=Ent&activo=true
+
+### 03. GET categoria por id - 200
+GET {{host}}/api/categorias/1
+
+### 04. GET categoria inexistente - 404
+GET {{host}}/api/categorias/999
+
+### 05. GET ruta anidada: platos de una categoria - 200
+GET {{host}}/api/categorias/1/platos
+
+### 06. GET ruta anidada con categoria inexistente - 404
+GET {{host}}/api/categorias/999/platos
+
+### 07. POST crear categoria - 201
+POST {{host}}/api/categorias
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Temporada",
+  "descripcion": "Platos de temporada"
+}
+
+### 08. POST crear categoria duplicada - 409
+POST {{host}}/api/categorias
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Temporada",
+  "descripcion": "Platos de temporada"
+}
+
+### 09. POST crear categoria con datos invalidos - 400
+POST {{host}}/api/categorias
+Content-Type: {{contentType}}
+
+{
+  "nombre": "A",
+  "descripcion": "Nombre demasiado corto"
+}
+
+### 10. PUT desactivar categoria sin platos - 204
+PUT {{host}}/api/categorias/5
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Temporada",
+  "descripcion": "Platos de temporada",
+  "activo": false
+}
+
+### 11. POST crear plato en categoria inactiva - 409
+POST {{host}}/api/platos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Plato de prueba",
+  "descripcion": "No debe crearse",
+  "precio": 15.00,
+  "disponible": true,
+  "categoriaId": 5
+}
+
+### 12. PUT mover plato a categoria inactiva - 409
+PUT {{host}}/api/platos/1
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Ceviche clásico",
+  "descripcion": "Pescado fresco marinado en limón y ají",
+  "precio": 28.90,
+  "disponible": true,
+  "categoriaId": 5
+}
+
+### 13. PUT desactivar categoria con platos disponibles - 409
+PUT {{host}}/api/categorias/2
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Platos de fondo",
+  "descripcion": "Especialidades de la casa",
+  "activo": false
+}
+
+### 14. PUT actualizar categoria inexistente - 404
+PUT {{host}}/api/categorias/999
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Categoria inexistente",
+  "descripcion": "Prueba",
+  "activo": true
+}
+
+### 15. DELETE eliminar categoria con platos - 409
+DELETE {{host}}/api/categorias/2
+
+### 16. DELETE eliminar categoria inexistente - 404
+DELETE {{host}}/api/categorias/999
+
+### 17. GET consultar categoria desactivada - 200
+GET {{host}}/api/categorias/5
+
+### 18. DELETE eliminar categoria sin platos - 204
+DELETE {{host}}/api/categorias/5
+
+### 19. GET consultar categoria eliminada - 404
+GET {{host}}/api/categorias/5
+
+### 20. GET listar platos - 200
+GET {{host}}/api/platos
+
+### 21. GET filtrar platos por nombre y disponibilidad - 200
+GET {{host}}/api/platos?nombre=arroz&disponible=true
+
+### 22. GET filtrar platos por categoria y rango de precio - 200
+GET {{host}}/api/platos?categoriaId=2&precioMin=30&precioMax=50
+
+### 23. GET plato por id - 200
+GET {{host}}/api/platos/1
+
+### 24. GET plato inexistente - 404
+GET {{host}}/api/platos/999
+
+### 25. POST crear plato - 201
+POST {{host}}/api/platos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Tiradito de prueba",
+  "descripcion": "Plato creado para las pruebas",
+  "precio": 25.50,
+  "disponible": true,
+  "categoriaId": 1
+}
+
+### 26. POST crear plato duplicado en la misma categoria - 409
+POST {{host}}/api/platos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Tiradito de prueba",
+  "descripcion": "Plato creado para las pruebas",
+  "precio": 25.50,
+  "disponible": true,
+  "categoriaId": 1
+}
+
+### 27. POST crear plato con precio invalido - 400
+POST {{host}}/api/platos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Precio invalido",
+  "precio": 0,
+  "disponible": true,
+  "categoriaId": 1
+}
+
+### 28. POST crear plato en categoria inexistente - 409
+POST {{host}}/api/platos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Plato huerfano",
+  "precio": 10.00,
+  "disponible": true,
+  "categoriaId": 999
+}
+
+### 29. PUT actualizar plato - 204
+PUT {{host}}/api/platos/10
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Tiradito actualizado",
+  "descripcion": "Actualizado en la prueba",
+  "precio": 27.00,
+  "disponible": false,
+  "categoriaId": 1
+}
+
+### 30. GET consultar plato actualizado - 200
+GET {{host}}/api/platos/10
+
+### 31. PUT actualizar plato inexistente - 404
+PUT {{host}}/api/platos/999
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Tiradito actualizado",
+  "precio": 27.00,
+  "disponible": false,
+  "categoriaId": 1
+}
+
+### 32. DELETE eliminar plato - 204
+DELETE {{host}}/api/platos/10
+
+### 33. GET consultar plato eliminado - 404
+GET {{host}}/api/platos/10
+
+### 34. DELETE eliminar plato inexistente - 404
+DELETE {{host}}/api/platos/999
+
+### 35. GET Swagger UI - 200
+GET {{host}}/swagger/index.html
+
+### 36. GET contrato OpenAPI - 200
+GET {{host}}/swagger/v1/swagger.json

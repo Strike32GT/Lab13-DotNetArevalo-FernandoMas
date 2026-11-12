@@ -1,0 +1,7 @@
+HTTP/1.1 400 Bad Request
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:17 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"Precio":["El precio debe estar entre 1.00 y 500.00 soles."]},"traceId":"00-90480bf4d0f22eb89554579a474ce7f2-9f286fa6f641ba08-00"}

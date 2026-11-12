@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:14 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+[{"categoriaId":4,"nombre":"Bebidas","descripcion":"Bebidas frías y calientes","activo":true,"cantidadPlatos":2},{"categoriaId":1,"nombre":"Entradas","descripcion":"Platos ligeros para comenzar la comida","activo":true,"cantidadPlatos":2},{"categoriaId":2,"nombre":"Platos de fondo","descripcion":"Especialidades de la casa","activo":true,"cantidadPlatos":3},{"categoriaId":3,"nombre":"Postres","descripcion":"Dulces preparados en el día","activo":true,"cantidadPlatos":2}]

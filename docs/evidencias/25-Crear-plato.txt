@@ -1,0 +1,8 @@
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Thu, 12 Nov 2026 00:01:17 GMT
+Server: Kestrel
+Location: https://localhost:7266/api/Platos/10
+Transfer-Encoding: chunked
+
+{"platoId":10,"nombre":"Tiradito de prueba","descripcion":"Plato creado para las pruebas","precio":25.50,"disponible":true,"categoriaId":1,"categoriaNombre":"Entradas"}

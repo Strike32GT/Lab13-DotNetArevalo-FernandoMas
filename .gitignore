@@ -1,0 +1,14 @@
+# Compilación de .NET
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+
+# Configuración local con la cadena de conexión real
+Restaurante.Api/appsettings.Development.json
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
